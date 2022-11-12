@@ -1,4 +1,5 @@
 const dropdowns = document.querySelectorAll(".dropdown");
+const operators = document.querySelector(".caret_2");
 
 dropdowns.forEach((dropdown) => {
   const select = dropdown.querySelector(".select");
@@ -15,15 +16,21 @@ dropdowns.forEach((dropdown) => {
 
   options.forEach((option) => {
     option.addEventListener("click", () => {
-      selected.classList.remove("select-clicked");
-      caret.classList.remove("caret-rotate");
-      menu.classList.remove("menu-open");
+      select.classList.toggle("select-clicked");
+      caret.classList.toggle("caret-rotate");
+      menu.classList.toggle("menu-open");
 
-      options.forEach((option) => {
-        option.classList.remove("active");
-      });
+      // selected.classList.remove("select-clicked");
+      // caret.classList.remove("caret-rotate");
+      // menu.classList.remove("menu-open");
 
-      option.classList.add("active");
+      // options.forEach((option) => {
+      //   option.classList.remove("active");
+      // });
+
+      // option.classList.add("active");
     });
   });
 });
+
+operators.addEventListener("click", () => {});
